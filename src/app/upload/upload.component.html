@@ -1,0 +1,18 @@
+<p>
+  Upload your images here
+</p>
+<div [formGroup]="uploadForm" (ngSubmit)="onUpload()">
+<div [ngClass]="validationStyle">
+  <label class="control-label register-label">Upload Image*</label>
+  <div class="image-preview" *ngIf="imageUrl">
+      <div id="imagePreview" [style.backgroundImage]="'url('+ imageUrl +')'">
+      </div>
+  </div>
+  <div class="image-upload">
+      <div class="image-edit">
+          <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" #fileInput
+              (change)="uploadFile($event)" />
+      </div>
+  </div>
+</div>
+</div>
